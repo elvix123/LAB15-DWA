@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title Agregar Nuevo Alumno
+  body
+    h1 Agregar Nuevo Alumno
+
+    form(action="/agregar", method="POST")
+      label(for="nombre") Nombre:
+      input(type="text", name="nombre", required)
+
+      label(for="edad") Edad:
+      input(type="number", name="edad", required)
+
+      label(for="apellido") Apellido:
+      input(type="text", name="apellido", required)
+
+      label(for="id_curso") Curso:
+      select(name="id_curso", required)
+        option(value="1") Matemáticas
+        option(value="2") Lenguaje
+        option(value="3") Ciencia
+        option(value="4") Biología
+        option(value="5") Física
+
+      input(type="submit", value="Agregar Alumno")
+
+    a(href="/") Volver a la página principal

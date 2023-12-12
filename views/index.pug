@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title Mi Proyecto con Bootstrap
+body
+h2 Datos de Alumnos Que solo tiene el curso de fisica
+ul
+  each alumno in datos
+    li
+      | #{alumno.nombre}, #{alumno.nombre_curso}  
+      button.btn.btn-primary(type="button", onclick=`window.location.href='/editar/${alumno.id}'`) Editar
+      | -
+      button.btn.btn-danger(type="button", onclick=`confirmarEliminar('${alumno.id}')`) Eliminar
+
+script.
+  function confirmarEliminar(alumnoId) {
+    var confirmacion = confirm("¿Estás seguro de que quieres eliminar este alumno?");
+    if (confirmacion) {
+      window.location.href = `/eliminar/${alumnoId}`;
+    }
+  }
+
+h2 Agregar nuevo Alumno
+ul
+  li
+    button.btn.btn-success(type="button", onclick="window.location.href='/agregar'") Agregar Nuevo Alumno

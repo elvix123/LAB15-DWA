@@ -1,0 +1,11 @@
+doctype html
+html
+  head
+    title Editar Dato
+  body
+    h1 Editar Dato
+    form(action=`/editar/${dato.id}` method="POST")
+      label(for="nuevoDato") Nuevo Dato:
+      input(type="text" name="nuevoDato" value=`${dato.nombre}` required)
+      button(type="submit") Actualizar
+    a(href="/") Volver a la lista
